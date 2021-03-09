@@ -6,7 +6,7 @@ export const GETPROJECTS = 'GETPROJECTS';
 export const getProjects = () => {
     return async (dispatch,getState) =>{
       try{
-        const response = await fetch('https://task-management-1baac.firebaseio.com/projects.json');
+        const response = await fetch('');
         if (!response.ok){
           throw new Error('Something Went Wrong');
         }
@@ -31,7 +31,7 @@ export const getProjects = () => {
 export const createProject  = (refNo,name,type) =>{
     return async (dispatch) => {
         console.log("HERE")
-        const response = await fetch('https://task-management-1baac.firebaseio.com/projects.json',
+        const response = await fetch('',
         {method:'POST',
         headers:{
             'Content-Type':'application/json'
