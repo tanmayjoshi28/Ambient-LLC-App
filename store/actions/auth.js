@@ -7,7 +7,7 @@ export const GETUSERS = 'GETUSERS';
 export const getusers = () => {
   return async (dispatch,getState) =>{
     try{
-      const response = await fetch('https://task-management-1baac.firebaseio.com/users.json');
+      const response = await fetch('');
       if (!response.ok){
         throw new Error('Something Went Wrong');
       }
@@ -35,7 +35,7 @@ export const signup = (email, password,username) => {
   return async dispatch => {
     /// REGESTERING USER IN FIREBASE AUTH
     const response1 = await fetch(
-      'https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyCRyJqAx44495HqXFyfevb5eXYaBBe--jc',
+      '',
       {
         method: 'POST',
         headers: {
@@ -60,7 +60,7 @@ export const signup = (email, password,username) => {
 
     /// REGISTERING USER IN REALTIME DATABASE
     const adminStatus = false;
-    const response2 = await fetch('https://task-management-1baac.firebaseio.com/users.json',
+    const response2 = await fetch('',
         {method:'POST',
         headers:{
             'Content-Type':'application/json'
@@ -86,7 +86,7 @@ export const signup = (email, password,username) => {
 export const login = (email, password) => {
   return async dispatch => {
     const response = await fetch(
-      'https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyCRyJqAx44495HqXFyfevb5eXYaBBe--jc',
+      '',
       {
         method: 'POST',
         headers: {
