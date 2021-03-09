@@ -7,7 +7,7 @@ export const SET_TASKS = 'SET_TASKS';
 export const fetchTasks = () =>{
     return async dispatch => {
         try{
-            const response = await fetch('https://task-management-1baac.firebaseio.com/tasks.json');
+            const response = await fetch('');
             if (!response.ok){
                 throw new Error('Something Went Wrong');
             }
@@ -44,7 +44,7 @@ export const createTask  = (tenderid, heading, details, priority, time, date, at
         const comment = "";
         const ownerId = getState().auth.userId;
 
-        const response = await fetch('https://task-management-1baac.firebaseio.com/tasks.json',
+        const response = await fetch('',
         {method:'POST',
         headers:{
             'Content-Type':'application/json'
@@ -97,7 +97,7 @@ export const deleteTask  = (taskid) =>{
         );
 
     if (!response.ok){
-        throw new Error('Something went wrong');
+        throw new Error('');
     }
     dispatch( {
         type:DELETE_TASK,
